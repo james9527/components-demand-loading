@@ -1,0 +1,40 @@
+.gui-fast-entries {
+  padding-top: 14px;
+  background-color: #fff;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.gui-fast-entries .item {
+  margin: 0 21px 24px;
+  list-style: none;
+}
+.gui-fast-entries .item dl {
+  width: 100px;
+  margin: 0 auto;
+}
+.gui-fast-entries .item dl dt {
+  width: inherit;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+.gui-fast-entries .item dl dd {
+  font-size: 24px;
+  color: #262C32;
+  text-align: center;
+  margin-top: 10px;
+}
+.gui-fast-entries.mrg {
+  margin: 24px 20px;
+}
+.gui-fast-entries.pdd {
+  padding: 22px 0 0;
+}
+
+
+/*# sourceMappingURL=gui-fast-entry_66492b.css.map*/

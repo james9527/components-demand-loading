@@ -1,0 +1,23 @@
+.gui-image-double-wrapper[data-v-dbb6fd40] {
+  height: 100%;
+}
+.gui-image-double-wrapper .img-list[data-v-dbb6fd40] {
+  display: flex;
+  height: 100%;
+}
+.gui-image-double-wrapper .img-list li[data-v-dbb6fd40] {
+  width: 50%;
+  flex: 1;
+  list-style: none;
+}
+.gui-image-double-wrapper .img-list li a[data-v-dbb6fd40] {
+  display: block;
+}
+.gui-image-double-wrapper .img-list li a img[data-v-dbb6fd40] {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/*# sourceMappingURL=gui-image-double_e62a48.css.map*/

@@ -1,0 +1,9 @@
+{
+  "gui-button": "./src/components/gui-button",
+  "gui-fast-entry": "./src/components/gui-fast-entry",
+  "gui-templet-floor-photo": "./src/components/gui-templet-floor-photo",
+  "gui-image-single": "./src/components/gui-image-single",
+  "gui-image-double": "./src/components/gui-image-double",
+  "gui-image-three": "./src/components/gui-image-three",
+  "gui-image-four-list": "./src/components/gui-image-four-list"
+}
