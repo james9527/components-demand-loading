@@ -30,7 +30,6 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-    @import url('../../../assets/styles/index.less');
-    @import url('./gui-button.less');;
+<style lang="less">
+    @import url('../../../styles/components/gui-button.less');;
 </style>

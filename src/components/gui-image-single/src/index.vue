@@ -49,6 +49,6 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-@import url('./gui-image-single.less');
+<style lang="less">
+@import url('../../../styles/components/gui-image-single.less');
 </style>

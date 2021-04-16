@@ -4,28 +4,50 @@ const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const px2remOpts = {
-  rootValue: 75,
+  rootValue: 100,
   unitPrecision: 5,
+  minPixelValue: 2
 }
 
 module.exports = {
   mode: 'production',
-  // entry: {
-  //   app: ['./src/index.js']
-  // },
   entry: './src/index.js',
   output: {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/dist/',
-    // filename: 'mCmsComponents.min.js',
-    filename: 'main.js',
+    filename: 'mCmsComponents.min.js',
+    // filename: 'main.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
     library: 'mCmsComponents',
     libraryTarget: 'commonjs2'
+  },
+  optimization: {
+    minimizer: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          warnings: false,
+          compress: {
+            drop_console: false,
+            drop_debugger: true
+          },
+          mangle: true, // 默认为false
+          module: false,
+          toplevel: false,
+          ie8: false,
+          keep_classnames: undefined,
+          keep_fnames: false,
+          safari10: false,
+        }
+      })
+    ],
   },
   module: {
     rules: [{
@@ -37,11 +59,6 @@ module.exports = {
       use: [
         {
           loader: MiniCssExtractPlugin.loader,
-          // options: {
-          //   publicPath: (resourcePath, context) => {
-          //     return path.relative(path.dirname(resourcePath), context) + '/styles/';
-          //   },
-          // }
         },
         'style-loader',
         'css-loader'
@@ -57,7 +74,6 @@ module.exports = {
           }
         },
         'css-loader',
-        'less-loader',
         {
           loader: 'postcss-loader',
           options: {
@@ -66,7 +82,15 @@ module.exports = {
               require('postcss-plugin-px2rem')(px2remOpts)
             ]
           }
-        }
+        },
+        // {
+        //   loader: 'px2rem-loader',
+        //   options: {
+        //     remUnit: 100,
+        //     remPrecision: 8
+        //   }
+        // },
+        'less-loader'
       ]
     }, {
       test: /\.(jp?eg|png|gif)$/,
@@ -74,7 +98,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10240,
-          name: path.posix.join('static', '[name]_[hash:6].[ext]')
+          name: path.posix.join('static', '[name].[ext]')
         }
       }]
     }, {
@@ -86,9 +110,18 @@ module.exports = {
     new CleanWebpackPlugin(),
     new ProgressBarPlugin(),
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '/theme/main.css',
-      // chunkFilename: '[id].css'
+    new MiniCssExtractPlugin(),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default', {
+          discardComments: {
+            removeAll: true
+          }
+        }],
+      },
+      canPrint: true
     })
   ]
 }

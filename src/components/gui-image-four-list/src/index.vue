@@ -41,6 +41,6 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-@import url('./gui-image-four-list.less');
+<style lang="less">
+@import url('../../../styles/components/gui-image-four-list.less');
 </style>

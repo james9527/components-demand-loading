@@ -1,6 +1,3 @@
-// 'use strict'
-// require('./check-versions')()
-
 process.env.NODE_ENV = 'production'
 
 const ora = require('ora')
@@ -10,12 +7,6 @@ const chalk = require('chalk')
 const webpack = require('webpack')
 const config = require('../config')
 let prodConfig = require('./webpack.prod.multiple.conf')
-// 判断参数是打包examples,设置output路径为dist/
-// 设置执行文件为example相关配置的webpack文件
-// if (process.argv[2] == 'examples') {
-//   prodConfig = require('./webpack.prod.examples.conf')
-//   config.build.assetsRoot = path.resolve(__dirname, '../dist')
-// }
 
 const spinner = ora('building for production...')
 spinner.start()

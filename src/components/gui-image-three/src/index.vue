@@ -38,6 +38,6 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-@import url('./gui-image-three.less');
+<style lang="less">
+@import url('../../../styles/components/gui-image-three.less');
 </style>

@@ -67,5 +67,5 @@ export default {
 </script>
 
 <style lang="less">
-@import url('./gui-fast-entries.less');
+@import url('../../../styles/components/gui-fast-entries.less');
 </style>

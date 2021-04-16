@@ -3,7 +3,7 @@ import GuiFastEntry from './components/gui-fast-entry/index.js';
 import GuiImageSingle from './components/gui-image-single/index.js';
 import GuiImageDouble from './components/gui-image-double/index.js';
 import GuiImageThree from './components/gui-image-three/index.js';
-import GuiImageFourListList from './components/gui-image-four-list/index.js';
+import GuiImageFourList from './components/gui-image-four-list/index.js';
 import GuiTempletFloorPhoto from './components/gui-templet-floor-photo/index.js';
 
 const components = {
@@ -17,9 +17,7 @@ const components = {
 }
 
 const install = function (Vue, opts = {}) {
-  console.log('install.installed_before:::')
   if (install.installed) return;
-  console.log('install.installed_after:::')
 
   Object.keys(components).forEach(key => {
     Vue.component(key, components[key]);
