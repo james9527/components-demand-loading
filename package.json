@@ -6,7 +6,7 @@
   "private": "true",
   "scripts": {
     "build:theme": "gulp --gulpfile build/gen-cssfile.js",
-    "dist": "npm run dist:single && npm run dist:multiple && npm run build:theme",
+    "dist": "npm run dist:single && npm run dist:multiple && npm run build:theme && rm lib/main.css",
     "dist:single": "webpack --config build/webpack.prod.single.conf.js",
     "dist:multiple": "node build/build-multiple.js"
   },
