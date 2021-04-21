@@ -24,7 +24,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     publicPath: '/dist/',
     filename: '[name].js',
     chunkFilename: '[id].js',
-    library: 'mCmsComponents',
+    library: 'compsLibraryName',
     libraryTarget: 'commonjs2'
   },
   performance: {

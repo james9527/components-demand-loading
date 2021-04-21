@@ -20,11 +20,10 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/dist/',
-    filename: 'mCmsComponents.min.js',
-    // filename: 'main.js',
+    filename: 'index.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
-    library: 'mCmsComponents',
+    library: 'compsLibraryName',
     libraryTarget: 'commonjs2'
   },
   optimization: {
