@@ -47,8 +47,8 @@ npm install babel-plugin-component -D
     ]
   ]
 }
-其中，`libraryName`指的是组件库名，与 `package.json` 文件的name属性值一致。
 ```
+其中，`libraryName`指的是组件库名，与 `package.json` 文件的name属性值一致。
 
 接下来，如果你只希望引入部分组件，比如 按钮组件`gui-button` 和 双图组件`gui-image-double`组件，那么需要在Vue的入口文件中写入以下内容：
 
